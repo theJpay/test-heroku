@@ -11,6 +11,17 @@ const app = express();
 
 app.use(express.static(__dirname + "/dist/"));
 
+mongoose.Promise = global.Promise;
+mongoose.connect(config.DB, config.options).then(
+    () => { console.log('Database is connected') },
+    err => { console.log('Can not connect to the database' + err) }
+);
+
+app.use(bodyParser.json());
+app.use(cors());
+
+app.use('/todos', todoRoutes);
+
 app.get(/.*/, function (req, res) {
     res.sendfile(__dirname + "/dist/index.html");
 });
