@@ -3,7 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const config = require(__dirname + '/DB.js');
+const config = require(__dirname + '/db.js');
 
 const port = process.env.PORT || 8080;
 const app = express();
