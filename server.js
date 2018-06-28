@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const config = require(__dirname + '/server/config/db.js');
 const todoRoutes = require(__dirname + '/server/routes/todoRoutes.js');
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.static(__dirname + "/dist/"));
