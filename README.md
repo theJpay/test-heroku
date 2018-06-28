@@ -1,7 +1,7 @@
 # A simple todo app
 
 This todo app has been made with vue.js and node.js using a mongo database. 
-It was a project made to be deployed on [heroku] (https://www.heroku.com/)
+It was a project made to be deployed on [heroku](https://www.heroku.com/)
 
 ## Prerequisites 
 
