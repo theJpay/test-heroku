@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     fetchToDos: function() {
-      let uri = "http://localhost:3000/todos";
+      let uri = "http://localhost:8080/todos";
       this.axios.get(uri).then(response => {
         this.list = response.data;
       });
@@ -96,7 +96,7 @@ export default {
           text: this.newEl,
           importance: imp
         };
-        let uri = "http://localhost:3000/todos/add";
+        let uri = "http://localhost:8080/todos/add";
         this.axios
           .post(uri, {
             text: this.newEl,
@@ -112,7 +112,7 @@ export default {
     },
     del: function(i) {
       const id = this.list[i]._id;
-      let uri = "http://localhost:3000/todos/del/" + id;
+      let uri = "http://localhost:8080/todos/del/" + id;
       this.axios.get(uri);
       this.list.splice(i, 1);
     },
@@ -123,7 +123,7 @@ export default {
       } else {
         this.list[i].text = this.editEl;
         const id = this.list[i]._id;
-        let uri = "http://localhost:3000/todos/update/" + id;
+        let uri = "http://localhost:8080/todos/update/" + id;
         this.axios.post(uri, this.list[i]).then(res => {
           console.log(res);
           this.onEdit = -1;
